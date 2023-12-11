@@ -1,6 +1,7 @@
 from celula_atm import CelulaATM
 import socket
 import pickle
+import time
 
 class Emissor:
     @staticmethod
@@ -24,4 +25,5 @@ if __name__ == "__main__":
     for i in range(0, len(dados_para_enviar), tamanho_bloco):
         bloco = dados_para_enviar[i:i + tamanho_bloco]
         emissor.enviar_celula(destino, 10, 20, 1, 0, bloco)
+        time.sleep(5)
 
